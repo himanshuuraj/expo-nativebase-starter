@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Login from "./components/login";
+import SignUp from "./components/signup";
 import FontAwesome from "./node_modules/@expo/vector-icons/fonts/FontAwesome.ttf";
 import MaterialIcons from "./node_modules/@expo/vector-icons/fonts/MaterialIcons.ttf";
 
@@ -26,7 +27,7 @@ export default class App extends React.Component {
     if (this.state.loading) return null;
     return (
       <View style={styles.container}>
-        <Login />
+        <SignUp />
       </View>
     );
   }

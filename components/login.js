@@ -37,7 +37,7 @@ export default () => {
           <Text
             style={{
               textAlign: "center",
-              fontSize: 25,
+              fontSize: 65,
               fontWeight: "bold"
             }}
           >
