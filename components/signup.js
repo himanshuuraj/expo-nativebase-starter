@@ -95,22 +95,30 @@ export default class SignUp extends Component {
       >
         <Container
           style={{
-            backgroundColor: "green",
+            backgroundColor: "yellow", // oTpDIvision, Green earlier
             flex: 0.25
           }}
         />
         <Container
           style={{
-            backgroundColor: "blue",
+            backgroundColor: "grey", //MiddleDivision, Blue earlier
             flex: 0.5,
-            paddingLeft: "5%",
-            paddingRight: "5%"
+            paddingLeft: "4%",
+            paddingRight: "4%"
           }}
         >
-          <Tabs>
+          <Tabs
+            tabBarUnderlineStyle={{
+              backgroundColor: "black"
+            }}
+          >
             <Tab
               heading={
-                <TabHeading>
+                <TabHeading
+                  style={{
+                    backgroundColor: "black"
+                  }}
+                >
                   <Text>Phone Number</Text>
                 </TabHeading>
               }
@@ -143,7 +151,7 @@ export default class SignUp extends Component {
                             />
                             <Input
                               placeholder="+44766554433"
-                              placeholderTextColor="#adb4bc"
+                              placeholderTextColor="black"
                               keyboardType={"phone-pad"}
                               returnKeyType="done"
                               autoCapitalize="none"
@@ -161,7 +169,11 @@ export default class SignUp extends Component {
             </Tab>
             <Tab
               heading={
-                <TabHeading>
+                <TabHeading
+                  style={{
+                    backgroundColor: "black"
+                  }}
+                >
                   <Text>Email Address</Text>
                 </TabHeading>
               }
@@ -266,10 +278,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 30,
-    backgroundColor: "#aa73b7"
+    backgroundColor: "white"
   },
   iconStyle: {
-    color: "#5a52a5",
+    color: "black",
     fontSize: 28,
     marginLeft: 15
   },
