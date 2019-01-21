@@ -13,7 +13,8 @@ import {
   Tab,
   Tabs,
   TabHeading,
-  Icon
+  Icon,
+  Title
 } from "native-base";
 
 import Modal from "react-native-modal";
@@ -95,31 +96,36 @@ export default class SignUp extends Component {
       >
         <Container
           style={{
-            backgroundColor: "yellow", // oTpDIvision, Green earlier
-            flex: 0.25
+            backgroundColor: "white", // oTpDIvision, Green earlier
+            flex: 0.3
           }}
         />
         <Container
           style={{
-            backgroundColor: "grey", //MiddleDivision, Blue earlier
+            backgroundColor: "white", //MiddleDivision, Blue earlier
             flex: 0.5,
-            paddingLeft: "4%",
-            paddingRight: "4%"
+            paddingLeft: "3%",
+            paddingRight: "3%"
           }}
         >
           <Tabs
             tabBarUnderlineStyle={{
-              backgroundColor: "black"
+              backgroundColor: "black",
+              height: "4%"
             }}
+          
           >
             <Tab
               heading={
                 <TabHeading
                   style={{
-                    backgroundColor: "black"
+                    backgroundColor: "white"
                   }}
                 >
-                  <Text>Phone Number</Text>
+                  <Text style={{
+                    color: "black",
+                    
+                  }}>PHONE NUMBER</Text>
                 </TabHeading>
               }
             >
@@ -140,17 +146,22 @@ export default class SignUp extends Component {
                           <Item style={styles.itemStyle}>
                             {/* <Icon active name="call" style={styles.iconStyle} /> */}
                             <Text>{this.state.phoneNumber}</Text>
-                            <Icon
+                            <Icon style={{
+                              Title: this.state.countryFlag
+                            }}
                               onPress={e => {
                                 //alert("TTT");
                                 this.showModal();
                               }}
-                              active
+                              
                               name="md-arrow-dropdown"
-                              style={[styles.iconStyle, { marginLeft: 0 }]}
+                              style={[styles.iconStyle, { marginLeft: 0,
+                              
+                              }]}
                             />
-                            <Input
-                              placeholder="+44766554433"
+                            <TextInput
+                              
+                              placeholder="Phone Number"
                               placeholderTextColor="black"
                               keyboardType={"phone-pad"}
                               returnKeyType="done"
@@ -158,31 +169,57 @@ export default class SignUp extends Component {
                               autoCorrect={false}
                               secureTextEntry={false}
                               style={styles.inputStyle}
+                              clearButtonMode='always'
                             />
+                            
                           </Item>
+                          
                         </Container>
+                        
+                        <Button disabled block>
+              <Text>NEXT</Text>
+            </Button>
                       </View>
+                    
                     </TouchableWithoutFeedback>
                   </KeyboardAvoidingView>
                 </SafeAreaView>
+                
               </Container>
+             
             </Tab>
             <Tab
               heading={
                 <TabHeading
                   style={{
-                    backgroundColor: "black"
+                    backgroundColor: "white"
+                    
                   }}
                 >
-                  <Text>Email Address</Text>
+                  <Text style={{
+                    color: "black"
+                  }}>EMAIL ADDRESS</Text>
                 </TabHeading>
               }
             >
               <Container>
-                <Text>B</Text>
-              </Container>
+        <Header />
+        <Content>
+          <Item >
+            <Input style ={{
+              backgroundColor: "white"
+            }}placeholder="Email Address" />
+          </Item>
+          <Button disabled block>
+              <Text>NEXT</Text>
+            </Button>
+        </Content>
+       
+      </Container>
             </Tab>
+          
           </Tabs>
+         
         </Container>
         <Container
           style={{
@@ -277,16 +314,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     backgroundColor: "white"
   },
   iconStyle: {
-    color: "black",
-    fontSize: 28,
-    marginLeft: 15
+    color: "blue",
+    fontSize: 30,
+    marginLeft: 10
+    
   },
   itemStyle: {
-    marginBottom: 10
+    marginBottom: 150
   },
   inputStyle: {
     flex: 1,

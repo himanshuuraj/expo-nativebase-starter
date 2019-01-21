@@ -7,6 +7,8 @@ import MaterialIcons from "./node_modules/@expo/vector-icons/fonts/MaterialIcons
 
 import { Font, AppLoading } from "expo";
 import Expo from "expo";
+import NameAndPassword from "./components/NameAndPassword";
+import Home from "./components/Home";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +29,7 @@ export default class App extends React.Component {
     if (this.state.loading) return null;
     return (
       <View style={styles.container}>
-        <SignUp />
+        <Home/>
       </View>
     );
   }
