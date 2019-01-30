@@ -263,6 +263,7 @@ export default class SignUp extends Component {
             <View style={{ flex: 1 }}>
               <View style={{ flex: 7 }}>
                 {/* Render the list of countries */}
+    
                 <FlatList
                   data={countryData.filter(
                     item =>

@@ -9,6 +9,7 @@ import { Font, AppLoading } from "expo";
 import Expo from "expo";
 import NameAndPassword from "./components/NameAndPassword";
 import Home from "./components/Home";
+import login from "./components/login";
 
 export default class App extends React.Component {
   constructor(props) {

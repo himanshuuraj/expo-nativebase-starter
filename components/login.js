@@ -31,17 +31,21 @@ export default () => {
           style={{
             justifyContent: "center",
             alignItems: "center",
-            width: "100%"
+            width: "100%",
+            backgroundColor: "Yellow"
           }}
         >
           <Text
             style={{
               textAlign: "center",
-              fontSize: 65,
-              fontWeight: "bold"
+              fontSize: 40,
+              fontWeight: "bold",
+             // fontStyle: "italic"
+             color:"#ff9933"
+              
             }}
           >
-            Bhaiyari
+            𝐁 𝐇 𝐀 𝐈 𝐘 𝐀 𝐑 𝐈
           </Text>
           <Form
             style={{
@@ -61,10 +65,13 @@ export default () => {
           <View
             style={{
               marginTop: 10,
-              width: "90%"
+              width: "90%",
+              
             }}
           >
-            <Button disabled block>
+            <Button disabled block style={{
+              backgroundColor: "#1b2631"
+            }}>
               <Text>login</Text>
             </Button>
           </View>

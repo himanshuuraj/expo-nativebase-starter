@@ -1,71 +1,109 @@
-import React, { Component } from "react";
-import { Font, AppLoading } from "expo";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
-  Container,
-  Header,
-  Content,
-  Text,
-  Button,
-  Form,
-  Item,
-  Label,
-  Input,
-  Card,
-  CardItem,
-  Body,
-  Image,
-  Left,
-  Thumbnail,
-  Icon,
-  Right
-} from "native-base";
-
-import { View } from "react-native";
+  View
+} from "react-native";
+import { Image } from 'react-native';
+import { Container, Header, Content, Card,Footer,FooterTab,Badge, CardItem, Thumbnail, Text, Button, Icon, Left,Right, Body } from 'native-base';
+//import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Badge } from 'native-base';
 
 
-export default () => {
-  return (
-    <Container>
-    <Header>
-      <Text style={{
-        fontStyle: "italic",
-        fontWeight: "25"
+export default class Home extends React.Component {
+  state = { expanded: false };
+
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Container style={{
+        width: "100%"
+      }}>
+         <Header Container style={{
+          height: 70,
+          backgroundColor: "#ff9933"
+          
+        }}
+      
         
-      }}>Bhaiyari</Text>
-    </Header>
-    <Content>
-      <Card>
-        <CardItem>
-          <Left>
-           // <Thumbnail source={{uri: 'C:\Users\vk\Documents\Bhaiyari\node_modules\react-native\RNTester\js\AnimatedGratuitousApp'}} />
-            <Body>
-              <Text>NativeBase</Text>
-              <Text note>GeekyAnts</Text>
-            </Body>
-          </Left>
-        </CardItem>
-        <CardItem cardBody>
-        //  <Image source={{uri: 'C:\Users\vk\Documents\Bhaiyari\node_modules\react-native\RNTester\js\AnimatedGratuitousApp'}} style={{height: 200, width: null, flex: 1}}/>
-        </CardItem>
-        <CardItem>
-          <Left>
-            <Button transparent>
-              <Icon active name="thumbs-up" />
-              <Text>12 Likes</Text>
-            </Button>
-          </Left>
-          <Body>
-            <Button transparent>
-              <Icon active name="chatbubbles" />
-              <Text>4 Comments</Text>
-            </Button>
-          </Body>
-          <Right>
-            <Text>11h ago</Text>
-          </Right>
-        </CardItem>
-      </Card>
-    </Content>
-  </Container>
-  );
-};
+        ></Header>
+       
+        <Content>
+          <Card style={{flex: 0}}>
+            <CardItem>
+              <Left>
+              <Thumbnail source={{uri: 'http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg'}} />
+                <Body>
+                  <Text>Madhav</Text>
+                  <Text note>April 15, 2016</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+              <Text Container style={{
+                  paddingBottom:10
+                }}>
+                How is this possible?! Is there no gravity at Lake Superior?
+                </Text>
+              <Image source={{uri: 'https://static.twentytwowords.com/wp-content/uploads/Amazing-Photos-You-Wont-Believe-Actually-Happened-1.jpg'}} style={{height: 200, width: "100%", flex: 1}}/>
+              </Body>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>12 Likes</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>4 Comments</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+            </CardItem>
+          </Card>
+        </Content>
+        
+        <Footer Container style={{
+          backgroundColor:"white"
+        }}>
+         <FooterTab Container style={{
+           backgroundColor:"white"
+         }}>
+           <Button badge vertical>
+             <Badge><Text>2</Text></Badge>
+             <Icon name="home" />
+             
+           </Button>
+           <Button vertical>
+             <Icon name="camera" />
+             <Text>Camera</Text>
+           </Button>
+           <Button active badge vertical>
+             <Badge ><Text>51</Text></Badge>
+             <Icon active name="notifications" />
+             <Text></Text>
+           </Button>
+           <Button vertical>
+             <Icon name="person" />
+             <Text></Text>
+           </Button>
+         </FooterTab>
+       </Footer> 
+      </Container>
+      
+       
+    
+      );
+  }
+}
+
+
