@@ -29,14 +29,14 @@ export default () => {
       >
         <Container
           style={{
-            
+
             alignItems: "center",
             width: "100%"
           }}
         >
           <Text
             style={{
-                width: "70%",
+              width: "70%",
               textAlign: "center",
               fontSize: 25,
               //fontWeight: "bold",

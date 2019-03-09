@@ -9,19 +9,19 @@ import {
   Form,
   Item,
   Label,
-  Input
+  Input,Footer, FooterTab, Hyperlink
 } from "native-base";
 
 import { View } from "react-native";
 
-export default () => {
+export default (props) => {
   return (
     <Container
       style={{
         width: "100%"
       }}
     >
-      <Header />
+
       <Content
         contentContainerStyle={{
           padding: 0
@@ -42,7 +42,7 @@ export default () => {
               fontWeight: "bold",
              // fontStyle: "italic"
              color:"#ff9933"
-              
+
             }}
           >
             𝐁 𝐇 𝐀 𝐈 𝐘 𝐀 𝐑 𝐈
@@ -65,18 +65,38 @@ export default () => {
           <View
             style={{
               marginTop: 10,
-              width: "90%",
-              
+              width: "90%"
             }}
           >
-            <Button disabled block style={{
-              backgroundColor: "#1b2631"
-            }}>
-              <Text>login</Text>
+            <Button block style={{
+              backgroundColor: "#ff9933"
+            }}
+            onPress={e => {
+              props.moveToScreen('home');
+            }}
+            >
+              <Text style={{
+                fontSize: 17
+              }}>login</Text>
             </Button>
           </View>
         </Container>
+
       </Content>
+      <Footer>
+        <FooterTab>
+          <Button style={{
+            backgroundColor: "white"
+          }}
+          onPress={e => {
+            props.moveToScreen('signUp');
+          }}>
+            <Text style={{
+              color: "black"
+            }}> Not Registered yet? CLick here to SignUp</Text>
+            </Button>
+        </FooterTab>
+      </Footer>
     </Container>
   );
 };

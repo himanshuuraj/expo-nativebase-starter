@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
   View
 } from "react-native";
-import { Image } from 'react-native';
-import { Container, Header, Content, Card,Footer,FooterTab,Badge, CardItem, Thumbnail, Text, Button, Icon, Left,Right, Body } from 'native-base';
+import { Image, TextInput } from 'react-native';
+import { Container, Header, Content, Card, Footer, FooterTab, Badge, CardItem, Thumbnail, Text, Button, Icon, Left, Right, Body } from 'native-base';
 //import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Badge } from 'native-base';
 
 
@@ -25,14 +25,16 @@ export default class Home extends React.Component {
          <Header Container style={{
           height: 70,
           backgroundColor: "#ff9933"
-          
+
         }}
-      
-        
+
+
         ></Header>
-       
+
         <Content>
-          <Card style={{flex: 0}}>
+          {
+            [...Array(5)].map((item, index) =>(
+          <Card key={index} style={{margin:"2%"}}>
             <CardItem>
               <Left>
               <Thumbnail source={{uri: 'http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg'}} />
@@ -49,8 +51,10 @@ export default class Home extends React.Component {
                 }}>
                 How is this possible?! Is there no gravity at Lake Superior?
                 </Text>
-              <Image source={{uri: 'https://static.twentytwowords.com/wp-content/uploads/Amazing-Photos-You-Wont-Believe-Actually-Happened-1.jpg'}} style={{height: 200, width: "100%", flex: 1}}/>
-              </Body>
+                {/*
+                <Image source={{uri: 'https://static.twentytwowords.com/wp-content/uploads/Amazing-Photos-You-Wont-Believe-Actually-Happened-1.jpg'}} style={{height: 200, width: "100%", flex: 1}}/>
+                 */}
+                </Body>
             </CardItem>
             <CardItem>
               <Left>
@@ -68,10 +72,21 @@ export default class Home extends React.Component {
               <Right>
                 <Text>11h ago</Text>
               </Right>
+              </CardItem>
+              <CardItem>
+              <Icon active name = "user" style = {{width: '7.5%'}}/>
+              <TextInput
+              placeholder="Add a comment"
+              multiline={true}
+              style = {{marginRight: 20, width: '80%'}}
+              ></TextInput>
+              <Icon style = {{width: '7.5%'}} active name = "post"/>
             </CardItem>
           </Card>
+          ))
+          }
         </Content>
-        
+
         <Footer Container style={{
           backgroundColor:"white"
         }}>
@@ -81,7 +96,7 @@ export default class Home extends React.Component {
            <Button badge vertical>
              <Badge><Text>2</Text></Badge>
              <Icon name="home" />
-             
+
            </Button>
            <Button vertical>
              <Icon name="camera" />
@@ -97,13 +112,11 @@ export default class Home extends React.Component {
              <Text></Text>
            </Button>
          </FooterTab>
-       </Footer> 
+       </Footer>
       </Container>
-      
-       
-    
+
+
+
       );
   }
 }
-
-
