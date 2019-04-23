@@ -33,6 +33,7 @@ export default class CommentBox extends React.Component {
 		show: PropTypes.bool.isRequired,
 		_in: PropTypes.string.isRequired,
 	};
+	
 	state = {
 		_likes : 0,
 	}
