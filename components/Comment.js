@@ -30,7 +30,7 @@ export default class Comment extends React.Component {
             </View>
         </View>
       </View>
-      ))
+      ));
 
       <View style = {styles.submitComment}>
         <Icon active name = "user" style = {{width: '7.5%'}}/>

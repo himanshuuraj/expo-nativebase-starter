@@ -59,6 +59,10 @@ export default (props) => {
               <Label>Password</Label>
               <Input />
             </Item>
+            <Item floatingLabel>
+              <Label>Re-Type-Password</Label>
+              <Input />
+            </Item>
           </Form>
           <View
             style={{

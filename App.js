@@ -9,13 +9,15 @@ import Expo from "expo";
 import NameAndPassword from "./components/NameAndPassword";
 import Home from "./components/Home";
 import Login from "./components/login";
-import Comment from "./Components/Comment";
+import Post from "./components/post";
+import CommentFinal from './components/CommentFinal';
+import Shoot from './components/shoot';
 
 export default class App extends React.Component {
 
   state = {
     loading : true,
-    selectedScreen : 'login'
+    selectedScreen : 'home',
   }
 
   constructor(props) {
@@ -44,8 +46,14 @@ export default class App extends React.Component {
         return <SignUp moveToScreen={this.moveToScreen}/>;
       case 'home':
         return <Home moveToScreen={this.moveToScreen}/>;
+	  case 'post':
+		return <Post moveToScreen={this.moveToScreen}/>;
+	  case 'CommentFinal':
+		return <CommentFinal moveToScreen={this.moveToScreen}/>;
+	  case 'shoot':
+		return <Shoot moveToScreen={this.moveToScreen}/>
       default:
-        return <Comment moveToScreen={this.moveToScreen}/>;
+        return <CommentFinal moveToScreen={this.moveToScreen}/>;
     }
   }
 
@@ -54,3 +62,4 @@ export default class App extends React.Component {
     return this.getScreen();
   }
 }
+
