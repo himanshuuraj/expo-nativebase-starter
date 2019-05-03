@@ -34,21 +34,20 @@ export default class postUI extends React.Component {
 		this.state = {
 			input: '',
 			commentVisibility: false,
+			data: '',
 		}
 	}
-	
 	
 	showComment = () => {
 		this.setState({
 			commentVisibility: true,
 		})
+		console.log(this.props.k)
 	}
-	
-	
 	
 	render() {
 		return (
-			  <Card key = {this.props.k} style={styles.cardStyle}>
+			  <Card key={this.props.k} style={styles.cardStyle}>
               <CardItem style={{flexwrap: 'wrap'}} header bordered>
                 <Left>
                 <Thumbnail source={{uri: 'http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg'}} />
@@ -60,8 +59,9 @@ export default class postUI extends React.Component {
               </CardItem>
               <CardItem style={{flexwrap: 'wrap'}} bordered>
                 <Body>
-                <Text   >
-                  How is this possible?! Is there no gravity at Lake Superior? Is there no gravity at Lake Superior? Is there no gravity at Lake Superior? Is there no gravity at Lake Superior?
+				
+                <Text>
+				{this.props.k.body.text}
                   </Text>
                   {/*
                   <Image source={{uri: 'https://static.twentytwowords.com/wp-content/uploads/Amazing-Photos-You-Wont-Believe-Actually-Happened-1.jpg'}} style={{height: 200, width: "100%", flex: 1}}/>
