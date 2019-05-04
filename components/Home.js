@@ -61,15 +61,17 @@ export default class Home extends React.Component {
   insertFlatList() {
 	  const flatListArr = this.state.flatListArr.slice();
 	  flatListArr.unshift(this.state.responseData);
-	  this.setState({flatListArr: flatListArr}, console.log('text of flatListArr[0] ', flatListArr[0].body.text))
+	  this.setState({flatListArr: flatListArr}, console.log('text of flatListArr[0] ', this.state.flatListArr))
 	  
   }
   
-  whenValueRecieved = (value) => {
+  whenValueRecieved = (responseData) => {
 	  this.setState({
-		  responseData: value
-	  }, () => this.insertFlatList())
-	  console.log('from flatList', this.state.flatListArr)
+		  responseData
+	  }, () => {
+		  this.insertFlatList()
+		  console.log('from flatList', this.state.responseData)})
+	  
   }
   
   render() {
@@ -78,14 +80,14 @@ export default class Home extends React.Component {
   	  this.setState(prevState => {
 		  return {show: true}
 	  })
-	  
     }
+	
     return (
 		
       <Container style={{
 		  width: "100%", flex: 1,
       }}>
-         <Header Container style={styles.headerStyle} />
+        <Header Container style={styles.headerStyle} />
 		
 		<Post restApiResponseData={this.whenValueRecieved}/>
 		  {
